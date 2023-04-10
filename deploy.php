@@ -36,7 +36,7 @@ host('production')
     ->setHostname('103.184.19.7')
     ->set('forward_agent',false)
     ->set('remote_user', 'root')
-    ->set('port', 2323)
+    ->set('port', 22)
     ->set('deploy_path', '/var/www/{{application}}')
     ->setLabels([
         'type' => 'app',
