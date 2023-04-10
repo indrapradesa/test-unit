@@ -52,7 +52,7 @@ host('production')
     });
 
     task('restart:web', function () {
-        run('sudo service php8.0-fpm restart');
+        run('sudo service php8.1-fpm restart');
         run('sudo service nginx restart');
     })->select('type=app');
 
