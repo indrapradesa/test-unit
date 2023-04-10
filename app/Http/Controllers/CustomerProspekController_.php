@@ -12,18 +12,13 @@ class CustomerProspekController extends Controller
      */
     public function index()
     {
+        // $response = Custprospek::paginate(10)->all();
+        // return view('tes.prospek.index', compact('response'));
+
         return view('tes.prospek.index', [
             'title' => 'Data Customer Prospek',
             'prospeks' => Custprospek::paginate(10)->all()
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('tes.prospek.created');
     }
 
     /**
@@ -38,14 +33,6 @@ class CustomerProspekController extends Controller
      * Display the specified resource.
      */
     public function show(Custprospek $custprospek)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Custprospek $custprospek)
     {
         //
     }
