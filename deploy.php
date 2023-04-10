@@ -13,7 +13,7 @@ set('branch', 'master');
 set('git_tty', false);
 
 // Set php binary file path
-set('bin/php', '/usr/bin/php8.0');
+set('bin/php', '/usr/bin/php8.2');
 
 // Project name
 set('application', 'app2');
@@ -52,7 +52,7 @@ host('production')
     });
 
     task('restart:web', function () {
-        run('sudo service php8.1-fpm restart');
+        run('sudo service php8.2-fpm restart');
         run('sudo service nginx restart');
     })->select('type=app');
 
