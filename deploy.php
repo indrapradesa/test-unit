@@ -7,7 +7,7 @@ require 'recipe/laravel.php';
 set('ssh_multiplexing', true);
 
 // Set default branch
-set('branch', 'master');
+set('branch', 'main');
 
 // Set git_tty
 set('git_tty', false);
