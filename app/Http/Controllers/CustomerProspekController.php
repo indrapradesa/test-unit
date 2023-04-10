@@ -39,7 +39,7 @@ class CustomerProspekController extends Controller
      */
     public function show(Custprospek $custprospek)
     {
-        //
+        return view('tes.prospek.show');
     }
 
     /**
