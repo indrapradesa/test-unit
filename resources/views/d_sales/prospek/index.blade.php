@@ -4,7 +4,9 @@
 
 <h2 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-black md:text-4xl dark:text-white">{{ $title }}</h2>
 
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <a href="/dashboard/prospek/create" class="ml-2 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Input Customer Prospek</a>
+
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-900 dark:text-white">
                     <tr>
@@ -28,9 +30,9 @@
                 <tbody>
                     @foreach ( $prospeks as $data)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $loop->iteration }}
-                        </th>
+                        </td>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $data->nama }}
                         </td>
@@ -41,8 +43,13 @@
                             {{ $data->no_tlpn }}
                         </td>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span>Edit</span></a>
+                            <form action="/dashboard/prospek/{{ $data->idcust_prospek }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="badge bg-danger border-0" onclick="return confirm('Yakin Data Di Hapus?')"><span class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</span>
+                                    {{-- <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg></button> --}}
+                            </form>
                         </td>
                     </tr>
                     @endforeach

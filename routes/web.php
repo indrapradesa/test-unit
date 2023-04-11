@@ -38,6 +38,6 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::resource('/dashboard/prospek', CustomerProspekController::class);
-    Route::resource('/dashboard/prospect', CprospectController::class);
+    // Route::resource('/dashboard/prospect', CprospectController::class);
 
 });

@@ -12,7 +12,7 @@ class Custprospek extends Model
     use HasFactory;
 
     protected $table = 'cust_prospek';
-    protected $primaryKey = 'idcus_prospek';
+    protected $primaryKey = 'idcust_prospek';
     protected $guarded = ['idcust_prospek'];
 
     protected $fillable = [

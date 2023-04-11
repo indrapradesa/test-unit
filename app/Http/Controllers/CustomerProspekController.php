@@ -17,7 +17,7 @@ class CustomerProspekController extends Controller
         return view('d_sales.prospek.index', [
             'title' => 'Data Customer Prospek',
             "active" => "all",
-            'prospeks' => Custprospek::paginate(10)->all()
+            'prospeks' => Custprospek::where('sales_id', auth()->user()->id)->get()
         ]);
     }
 
@@ -74,14 +74,19 @@ class CustomerProspekController extends Controller
      */
     public function update(Request $request, Custprospek $custprospek)
     {
-        //
+         //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Custprospek $custprospek)
+    public function destroy(Custprospek $custprospek, $ids)
     {
-        //
+
+        Custprospek::destroy($ids);
+
+    //    @dd($custprospek);
+
+        return redirect('/dashboard/prospek')->with('success','Post has been Deleted');
     }
 }
