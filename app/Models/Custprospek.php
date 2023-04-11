@@ -12,10 +12,30 @@ class Custprospek extends Model
     use HasFactory;
 
     protected $table = 'cust_prospek';
+    protected $primaryKey = 'idcus_prospek';
     protected $guarded = ['idcust_prospek'];
+
+    protected $fillable = [
+        'nama',
+        'alamat',
+        'no_tlpn',
+        'metode_id',
+        'status_id',
+        'sales_id'
+    ];
 
     public function closing(): BelongsTo
     {
         return $this->belongsTo(Custclosing::class);
+    }
+
+    public function metode() :BelongsTo
+    {
+        return $this->belongsTo(Mketemu::class, 'metode_id' ,'id_metode');
+    }
+
+    public function status() :BelongsTo
+    {
+        return $this->belongsTo(Sawal::class, 'status_id' ,'idstatus_cust');
     }
 }

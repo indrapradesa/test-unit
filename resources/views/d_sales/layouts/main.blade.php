@@ -18,10 +18,10 @@
 <body class="bg-slate-100 dark:bg-gray-700">
 
 {{-- Navbar --}}
-@include('partials.navbar')
+@include('d_sales.partials.navbar')
 
 {{-- Sidebar --}}
-@include('partials.sidebar')
+@include('d_sales.partials.sidebar')
 
   <div class="p-2 md:ml-60">
      <div class="p-4 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">

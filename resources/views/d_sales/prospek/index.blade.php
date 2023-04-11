@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('d_sales.layouts.main')
 
 @section('container')
 

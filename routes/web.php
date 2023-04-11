@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CustClosingController;
 use App\Http\Controllers\CustomerProspekController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('tes.index');
 // });
 
-Route::resource('/prospek', CustomerProspekController::class);
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/dashboard', function() {
+        return view('d_sales.index');
+    });
+    Route::resource('/dashboard/prospek', CustomerProspekController::class);
+});

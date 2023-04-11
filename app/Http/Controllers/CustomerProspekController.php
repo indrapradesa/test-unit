@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sawal;
+use App\Models\Mketemu;
 use App\Models\Custprospek;
 use Illuminate\Http\Request;
 
@@ -12,7 +14,7 @@ class CustomerProspekController extends Controller
      */
     public function index()
     {
-        return view('tes.prospek.index', [
+        return view('d_sales.prospek.index', [
             'title' => 'Data Customer Prospek',
             'prospeks' => Custprospek::paginate(10)->all()
         ]);
@@ -23,7 +25,11 @@ class CustomerProspekController extends Controller
      */
     public function create()
     {
-        return view('tes.prospek.created');
+        return view('d_sales.prospek.created', [
+            'title' => 'Input Customer Prospek',
+            'metode' => Mketemu::get(),
+            'status' => Sawal::get()
+        ]);
     }
 
     /**
@@ -31,7 +37,19 @@ class CustomerProspekController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'metode_id' =>'required',
+            'status_id' => 'required',
+            'nama' =>'required',
+            'alamat' => 'required',
+            'no_tlpn' => 'required'
+        ]);
+
+        $validateData['sales_id'] = auth()->user()->id;
+
+        Custprospek::create($validateData);
+
+        return redirect('/dashboard/prospek')->with('success','New post has been created');
     }
 
     /**
@@ -39,7 +57,7 @@ class CustomerProspekController extends Controller
      */
     public function show(Custprospek $custprospek)
     {
-        return view('tes.prospek.show');
+        return view('d_sales.prospek.show');
     }
 
     /**
