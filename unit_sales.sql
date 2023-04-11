@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2023 at 12:37 PM
+-- Generation Time: Apr 11, 2023 at 11:34 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -121,34 +121,43 @@ CREATE TABLE `cust_prospek` (
   `sales_id` int(10) UNSIGNED NOT NULL,
   `nama` varchar(100) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
-  `no_tlpn` int(50) UNSIGNED DEFAULT NULL
+  `no_tlpn` int(50) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cust_prospek`
 --
 
-INSERT INTO `cust_prospek` (`idcust_prospek`, `status_id`, `metode_id`, `sales_id`, `nama`, `alamat`, `no_tlpn`) VALUES
-(1, 1, 1, 1, 'Andi', 'Jl. Sudirman No. 10', 123456789),
-(2, 2, 2, 2, 'Budi', 'Jl. Thamrin No. 20', 987654321),
-(3, 1, 1, 3, 'Cindy', 'Jl. Gajah Mada No. 30', 2468101214),
-(4, 3, 3, 4, 'Dina', 'Jl. Diponegoro No. 40', 369121518),
-(5, 2, 1, 5, 'Eka', 'Jl. Kebon Jeruk No. 50', 1516171819),
-(6, 1, 2, 6, 'Fani', 'Jl. Gatot Subroto No. 60', 2021222324),
-(7, 3, 3, 7, 'Gina', 'Jl. Tanah Abang No. 70', 2526272829),
-(8, 2, 2, 8, 'Hadi', 'Jl. Cikini No. 80', 3031323334),
-(9, 1, 1, 1, 'Ika', 'Jl. Mangga Dua No. 90', 3536373839),
-(10, 3, 3, 2, 'Joni', 'Jl. Pemuda No. 100', 4041424344),
-(11, 2, 2, 3, 'Kiki', 'Jl. Pahlawan No. 110', 4294967295),
-(12, 1, 1, 4, 'Lia', 'Jl. Ahmad Yani No. 120', 4294967295),
-(13, 3, 3, 5, 'Mira', 'Jl. Raya Bogor No. 130', 4294967295),
-(14, 2, 2, 6, 'Nina', 'Jl. Raya Bekasi No. 140', 4294967295),
-(15, 1, 1, 7, 'Oki', 'Jl. Raya Serpong No. 150', 4294967295),
-(16, 3, 3, 8, 'Pia', 'Jl. Raya Tangerang No. 160', 4294967295),
-(17, 2, 2, 1, 'Qin', 'Jl. Raya Cirebon No. 170', 4294967295),
-(18, 1, 1, 2, 'Rika', 'Jl. Raya Solo No. 180', 4294967295),
-(19, 3, 3, 3, 'Sari', 'Jl. Raya Malang No. 190', 4294967295),
-(20, 2, 2, 4, 'Tina', 'Jl. Raya Bandung No. 200', 4294967295);
+INSERT INTO `cust_prospek` (`idcust_prospek`, `status_id`, `metode_id`, `sales_id`, `nama`, `alamat`, `no_tlpn`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 1, 'Andi', 'Jl. Sudirman No. 10', 123456789, NULL, NULL),
+(2, 2, 2, 2, 'Budi', 'Jl. Thamrin No. 20', 987654321, NULL, NULL),
+(3, 1, 1, 3, 'Cindy', 'Jl. Gajah Mada No. 30', 2468101214, NULL, NULL),
+(4, 3, 3, 4, 'Dina', 'Jl. Diponegoro No. 40', 369121518, NULL, NULL),
+(5, 2, 1, 5, 'Eka', 'Jl. Kebon Jeruk No. 50', 1516171819, NULL, NULL),
+(6, 1, 2, 6, 'Fani', 'Jl. Gatot Subroto No. 60', 2021222324, NULL, NULL),
+(7, 3, 3, 7, 'Gina', 'Jl. Tanah Abang No. 70', 2526272829, NULL, NULL),
+(8, 2, 2, 8, 'Hadi', 'Jl. Cikini No. 80', 3031323334, NULL, NULL),
+(9, 1, 1, 1, 'Ika', 'Jl. Mangga Dua No. 90', 3536373839, NULL, NULL),
+(10, 3, 3, 2, 'Joni', 'Jl. Pemuda No. 100', 4041424344, NULL, NULL),
+(11, 2, 2, 3, 'Kiki', 'Jl. Pahlawan No. 110', 4294967295, NULL, NULL),
+(12, 1, 1, 4, 'Lia', 'Jl. Ahmad Yani No. 120', 4294967295, NULL, NULL),
+(13, 3, 3, 5, 'Mira', 'Jl. Raya Bogor No. 130', 4294967295, NULL, NULL),
+(14, 2, 2, 6, 'Nina', 'Jl. Raya Bekasi No. 140', 4294967295, NULL, NULL),
+(15, 1, 1, 7, 'Oki', 'Jl. Raya Serpong No. 150', 4294967295, NULL, NULL),
+(16, 3, 3, 8, 'Pia', 'Jl. Raya Tangerang No. 160', 4294967295, NULL, NULL),
+(17, 2, 2, 1, 'Qin', 'Jl. Raya Cirebon No. 170', 4294967295, NULL, NULL),
+(18, 1, 1, 2, 'Rika', 'Jl. Raya Solo No. 180', 4294967295, NULL, NULL),
+(19, 3, 3, 3, 'Sari', 'Jl. Raya Malang No. 190', 4294967295, NULL, NULL),
+(20, 2, 2, 4, 'Tina', 'Jl. Raya Bandung No. 200', 4294967295, NULL, NULL),
+(21, 1, 1, 1, 'Indra Pradesa', 'sfsd', 123, '2023-04-11 01:11:40', '2023-04-11 01:11:40'),
+(22, 1, 1, 1, 'sdf', 'sfsd', 2124, '2023-04-11 01:27:03', '2023-04-11 01:27:03'),
+(23, 1, 1, 1, 'sdf', 'sfsd', 123, '2023-04-11 01:30:47', '2023-04-11 01:30:47'),
+(24, 1, 1, 1, 'adsasd', 'asd', 123, '2023-04-11 01:33:10', '2023-04-11 01:33:10'),
+(25, 2, 2, 1, 'Adsasd', 'qwe', 123, '2023-04-11 01:34:29', '2023-04-11 01:34:29'),
+(26, 1, 1, 1, 'dfsd', 'asd', 123, '2023-04-11 01:43:35', '2023-04-11 01:43:35'),
+(27, 1, 1, 1, 'Adsasd', 'qwe', 123, '2023-04-11 02:07:23', '2023-04-11 02:07:23');
 
 -- --------------------------------------------------------
 
@@ -424,6 +433,31 @@ INSERT INTO `status_cust` (`idstatus_cust`, `jenis_status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `karyawan_nip` int(10) UNSIGNED NOT NULL,
+  `jabatan_id` int(10) UNSIGNED NOT NULL,
+  `divisi_id` int(10) UNSIGNED NOT NULL,
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `remember_token` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `karyawan_nip`, `jabatan_id`, `divisi_id`, `password`, `email`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 12345, 1, 2, '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'indra@example.com', '4jzOYUbSJC', '2023-04-11 13:22:20', '2023-04-11 13:22:20');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `verify_program`
 --
 
@@ -553,6 +587,12 @@ ALTER TABLE `status_cust`
   ADD PRIMARY KEY (`idstatus_cust`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `verify_program`
 --
 ALTER TABLE `verify_program`
@@ -586,7 +626,7 @@ ALTER TABLE `cust_closing`
 -- AUTO_INCREMENT for table `cust_prospek`
 --
 ALTER TABLE `cust_prospek`
-  MODIFY `idcust_prospek` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idcust_prospek` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `jenis_program`
@@ -659,6 +699,12 @@ ALTER TABLE `sebaran_brosur`
 --
 ALTER TABLE `status_cust`
   MODIFY `idstatus_cust` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `verify_program`
