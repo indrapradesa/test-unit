@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sawal;
-use App\Models\Mketemu;
-use App\Models\Custprospek;
+use App\Models\Cmethod;
+use App\Models\Cprospect;
+use App\Models\Cstatus;
 use Illuminate\Http\Request;
 
-class CustomerProspekController extends Controller
+class CprospectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,7 @@ class CustomerProspekController extends Controller
     {
         return view('d_sales.prospek.index', [
             'title' => 'Data Customer Prospek',
-            "active" => "all",
-            'prospeks' => Custprospek::paginate(10)->all()
+            'prospeks' => Cprospect::paginate(10)->all()
         ]);
     }
 
@@ -28,8 +27,8 @@ class CustomerProspekController extends Controller
     {
         return view('d_sales.prospek.created', [
             'title' => 'Input Customer Prospek',
-            'metode' => Mketemu::get(),
-            'status' => Sawal::get()
+            'metode' => Cmethod::all(),
+            'status' => Cstatus::all()
         ]);
     }
 
@@ -43,28 +42,28 @@ class CustomerProspekController extends Controller
             'status_id' => 'required',
             'nama' =>'required',
             'alamat' => 'required',
-            'no_tlpn' => 'required|unique:cust_prospek'
+            'no_tlpn' => 'required',
         ]);
 
         $validateData['sales_id'] = auth()->user()->id;
 
-        Custprospek::create($validateData);
+        Cprospect::create($validateData);
 
-        return redirect('/dashboard/prospek')->with('success','New post has been created');
+        return redirect('/dashboard/prospect')->with('success','New post has been created');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Custprospek $custprospek)
+    public function show(Cprospect $cprospect)
     {
-        return view('d_sales.prospek.show');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Custprospek $custprospek)
+    public function edit(Cprospect $cprospect)
     {
         //
     }
@@ -72,7 +71,7 @@ class CustomerProspekController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Custprospek $custprospek)
+    public function update(Request $request, Cprospect $cprospect)
     {
         //
     }
@@ -80,7 +79,7 @@ class CustomerProspekController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Custprospek $custprospek)
+    public function destroy(Cprospect $cprospect)
     {
         //
     }

@@ -11,6 +11,7 @@ class Sawal extends Model
     use HasFactory;
 
     protected $table = 'status_cust';
+    protected $primaryKey = 'idstatus_cust';
     protected $guarded = ['idstatus_cust'];
 
     public function prospek() : HasMany

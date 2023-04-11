@@ -16,12 +16,12 @@ class Custprospek extends Model
     protected $guarded = ['idcust_prospek'];
 
     protected $fillable = [
+        'metode_id',
+        'status_id',
+        'sales_id',
         'nama',
         'alamat',
         'no_tlpn',
-        'metode_id',
-        'status_id',
-        'sales_id'
     ];
 
     public function closing(): BelongsTo

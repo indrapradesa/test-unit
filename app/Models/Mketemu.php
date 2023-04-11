@@ -11,6 +11,7 @@ class Mketemu extends Model
     use HasFactory;
 
     protected $table = 'metode_ketemu';
+    protected $primaryKey = 'id_metode';
     protected $guarded = ['id_metode'];
 
     public function prospek () : HasMany

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CprospectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CustClosingController;
@@ -35,5 +36,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function() {
         return view('d_sales.index');
     });
+
     Route::resource('/dashboard/prospek', CustomerProspekController::class);
+    Route::resource('/dashboard/prospect', CprospectController::class);
+
 });
