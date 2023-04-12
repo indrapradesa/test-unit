@@ -24,4 +24,14 @@ class Custclosing extends Model
     {
         return $this->belongsTo(Sales::class, 'sales_idsales', 'idsales');
     }
+
+    public function jcust() : BelongsTo
+    {
+        return $this->belongsTo(Jcustomer::class, 'jenis_cust_id', 'idjenis_cust');
+    }
+
+    public function codp() : BelongsTo
+    {
+        return $this->belongsTo(Odp::class, 'odp_id', 'idodp');
+    }
 }

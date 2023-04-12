@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Custclosing;
-use App\Models\Custprospek;
-use App\Models\Jcustomer;
-use App\Models\Odp;
 use Illuminate\Http\Request;
 
 class CustomerClosingController extends Controller
@@ -15,23 +12,10 @@ class CustomerClosingController extends Controller
      */
     public function index()
     {
-        return view('d_sales.closing.index',[
-            'title' => 'Data Customer Closing',
-            'closing' => Custclosing::all()
-        ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('d_sales.closing.create', [
-            'title' => 'Input Customer Closing',
-            'jcust' => Jcustomer::all(),
-            'odp' => Odp::all(),
-            'prospek' => Custprospek::where('sales_id', auth()->user()->id)->get()
-        ]);
+        $response = Custclosing::with('prospek')->get();
+        // return response()->json($response);
+        // return view('cclosing', compact('response'));
+        @dd($response);
     }
 
     /**
@@ -46,14 +30,6 @@ class CustomerClosingController extends Controller
      * Display the specified resource.
      */
     public function show(Custclosing $custclosing)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Custclosing $custclosing)
     {
         //
     }

@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\CprospectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CprospectController;
 use App\Http\Controllers\CustClosingController;
+use App\Http\Controllers\CustomerClosingController;
 use App\Http\Controllers\CustomerProspekController;
 
 /*
@@ -27,7 +28,7 @@ use App\Http\Controllers\CustomerProspekController;
 //     return view('tes.index');
 // });
 
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
+Route::get('/', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
@@ -38,6 +39,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::resource('/dashboard/prospek', CustomerProspekController::class);
+    Route::resource('/dashboard/closing', CustomerClosingController::class);
     // Route::resource('/dashboard/prospect', CprospectController::class);
 
 });
