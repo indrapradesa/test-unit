@@ -24,9 +24,18 @@ class Custprospek extends Model
         'no_tlpn',
     ];
 
+    // public function scopeFilter($query, array $filters)
+    // {
+    //     $query->when($filters['prospek_id'] ?? false, fn($query, $author) =>
+    //         $query->whereHas('prospek_id', fn($query) =>
+    //             $query->where('nama', $author)
+    //         )
+    //     );
+    // }
+
     public function closing(): BelongsTo
     {
-        return $this->belongsTo(Custclosing::class);
+        return $this->belongsTo(Custclosing::class, 'prospek_id', 'idcust_prospek');
     }
 
     public function metode() :BelongsTo

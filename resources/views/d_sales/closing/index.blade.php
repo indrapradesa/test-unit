@@ -14,13 +14,16 @@
                             No.
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Nama
+                            NIK
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Alamat
+                            Nama Lenkap
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Nomor Telephone
+                            Alamat Terpasang
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            No Telephone
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Action
@@ -34,16 +37,19 @@
                             {{ $loop->iteration }}
                         </td>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{ $data->nama }}
+                            {{ $data->nik }}
+                        </td>
+                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ $data->nama}}
                         </td>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $data->alamat_terpasang }}
                         </td>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{ $data->nik }}
+                            {{ $data->no_tlpn }}
                         </td>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span>Show</span></a>
+                            <a href="/dashboard/closing/{{ $data->idcust_closing }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span>Show</span></a>
                             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span>Edit</span></a>
                             {{-- <form action="/dashboard/prospek/{{ $data->idcust_prospek }}" method="post">
                                 @csrf

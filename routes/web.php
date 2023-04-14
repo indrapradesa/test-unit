@@ -6,6 +6,7 @@ use App\Http\Controllers\CprospectController;
 use App\Http\Controllers\CustClosingController;
 use App\Http\Controllers\CustomerClosingController;
 use App\Http\Controllers\CustomerProspekController;
+use App\Http\Controllers\SebaranBrosurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,12 +35,18 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function () {
 
+    Route::get('/dashboard/profile', function() {
+        return view('d_sales.profile.index');
+    });
+
     Route::get('/dashboard', function() {
         return view('d_sales.index');
     });
 
     Route::resource('/dashboard/prospek', CustomerProspekController::class);
     Route::resource('/dashboard/closing', CustomerClosingController::class);
+    Route::get('/dashboard/closing/{custclosing}', [CustomerClosingController::class, 'show'])->name('custclosing.show');
+    Route::resource('/dashboard/brosur', SebaranBrosurController::class);
     // Route::resource('/dashboard/prospect', CprospectController::class);
 
 });

@@ -49,17 +49,20 @@
         </ol>
     </nav>
 
-        <main>
+        {{-- <main> --}}
             <div class="container">
                 @yield('container')
             </div>
-        </main>
+        {{-- </main> --}}
 
      </div>
   </div>
 
+  {{-- @push('scripts') --}}
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"></script>
 
     <script>
         var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -103,5 +106,7 @@
 
         });
     </script>
+
+    {{-- @endpush --}}
 </body>
 </html>
