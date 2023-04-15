@@ -11,21 +11,32 @@
         </div>
         <div class="  p-2 px-3 py-3 border-2 border-dashed rounded-lg dark:border-slate-500 ">
             <h2 class="mb-4 text-lg font-extrabold leading-none tracking-tight text-black md:text-lg dark:text-white">Data KTP</h2>
-            <div class="mb-6">
-                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">NIK : {{ $custclosing->nik }}</label>
+            <div class="mb-6 flex ">
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-4/12">NIK</label>
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/12">:</label>
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-7/12">{{ $custclosing->nik }}</label>
             </div>
-            <div class="mb-6 ">
-                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Lengkap : {{ $custclosing->nama }}</label>
+            <div class="mb-6 flex ">
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-4/12">Nama</label>
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/12">:</label>
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-7/12">{{ $custclosing->nama }}</label>
             </div>
-            <div class="mb-6 ">
-                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis Kelamin : {{ $custclosing->jk }} </label>
+            <div class="mb-6 flex ">
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-4/12">Jenis Kelamin</label>
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/12">:</label>
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-7/12">{{ $custclosing->jk }}</label>
             </div>
-            <div class="mb-6 ">
-                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat : {{ $custclosing->almt_ktp }}</label>
+            <div class="mb-6 flex ">
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-4/12">Alamat KTP</label>
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/12">:</label>
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-7/12">{{ $custclosing->almt_ktp }}</label>
             </div>
-            <div class="mb-6 ">
-                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tanggal Lahir : {{ $custclosing->tgl_lahir }}</label>
+            <div class="mb-6 flex ">
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-4/12">Tanggal Lahir</label>
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/12">:</label>
+                <label for="prospek_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-7/12">{{ $custclosing->tgl_lahir }}</label>
             </div>
+
 
         </div>
 
