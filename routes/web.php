@@ -49,4 +49,12 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/dashboard/brosur', SebaranBrosurController::class);
     // Route::resource('/dashboard/prospect', CprospectController::class);
 
+    Route::get('/dashboard/profile/komisi', function(){
+        return view('d_sales.profile.komis');
+    });
+
+    Route::get('/dashboard/profile/gantipass', function(){
+        return view('d_sales.profile.updatepass');
+    });
+
 });

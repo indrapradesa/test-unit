@@ -2,11 +2,18 @@
 
 @section('container')
 
+
 <div class="col-lg-8 p-4 border-2 border-gray-200 border-solid rounded-lg dark:border-slate-500">
+    @include('d_sales.partials.tabs')
+    <div class="mb-2">
+        <div class="my-2 -mt-2 mb-4 space-y-2 font-medium border-b border-gray-200 dark:border-gray-500">
+
+        </div>
+    </div>
 {{-- <div class="flex flex-row bg-white"> --}}
     {{-- <div class="grid grid-cols-3 gap-4"> --}}
     {{-- <div class="flex flex-row bg-cyan-200"> --}}
-    <div class="grid grid-cols-1 md:grid-cols-2 bg-cyan-300">
+    <div class="grid grid-cols-1 md:grid-cols-2 mt-7">
         <div class="w-full max-w-5xl p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             <h2 class="text-black md:text-2xl dark:text-white mb-6">Profile</h2>
             <div class="flex flex-row mb-6">
